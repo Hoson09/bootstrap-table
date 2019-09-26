@@ -1,0 +1,517 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-18 17:29:23
+ * @LastEditTime: 2019-08-31 16:31:50
+ * @LastEditors: Please set LastEditors
+ -->
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Bootstrap 后台管理</title>
+    <!-- <link rel="stylesheet" href="../style/main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+    <style>
+        .content {
+            display: flex;
+        }
+
+        .content-r {
+            flex: 1;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0" id="aaa">
+        <h1>哈工大后台管理</h1>
+    </nav>
+
+    <div class="content" style="display: flex;">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span data-feather="home"></span>
+                            后台管理 <span class="sr-only"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file"></span>
+                            权限管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="shopping-cart"></span>
+                            商品列表
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="users"></span>
+                            用户管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="bar-chart-2"></span>
+                            商品管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="layers"></span>
+                            商品权限
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content-r" style="flex:1; margin-left: 30px;">
+            <button type="button" id="save" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                添加
+            </button>
+            <button type="button" id="editorBtn" class="btn btn-primary btn-lg" data-toggle="modal"
+                data-target="#myModal1">
+                修改
+            </button>
+            <button type="button" id="delbtn" class="btn btn-outline-secondary">删除</button>
+
+            <button type="button" class="btn btn-outline-danger">查询</button>
+
+
+            <div>
+                <div>
+                    <div class="col-*-12">
+
+
+
+                        <table id="mytab" class="table table-dark table-hover"></table>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <h4 class="modal-title" id="myModalLabel">添加数据<span
+                                                    aria-hidden="true">&times;</span></h4>
+                                        </button>
+
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="frmadd" role="form" action="javascript:void(0)">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="author" name="author"
+                                                    placeholder="请输入名字">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="college" name="college"
+                                                    placeholder="请输入大学">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="course_name"
+                                                    name="course_name" placeholder="请输入课程名">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="category_Id"
+                                                    name="category_Id" placeholder="请输入类别">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            id="addbtn">保存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 修改框 -->
+                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog"
+                            aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <h4 class="modal-title" id="myModalLabel">修改数据<span
+                                                    aria-hidden="true">&times;</span></h4>
+                                        </button>
+
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="frmadd1" role="form" action="javascript:void(0)">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="author1" name="author"
+                                                    placeholder="请输入名字">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="college1" name="college"
+                                                    placeholder="请输入大学">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="course_name1"
+                                                    name="course_name" placeholder="请输入课程名">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="category_Id1"
+                                                    name="category_Id" placeholder="请输入类别">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" id="cancelbtn">取消</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            id="editbtn">保存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            //根据窗口调整表格高度
+            // $(window).resize(function () {
+            //     $('#mytab').bootstrapTable('resetView', {
+            //         height: tableHeight()
+            //     })
+            // })
+            ;
+            $('#mytab').bootstrapTable({
+                url: "http://localhost:3000/course", //数据源
+                // dataField: "rows", //服务端返回数据键值 就是说记录放的键值是rows，分页时使用总记录数的键值为total
+                height: tableHeight(), //高度调整
+                search: true, //是否搜索
+                pagination: true, //是否分页
+                pageSize: 20, //单页记录数
+                pageList: [5, 10, 20, 50], //分页步进值
+                sidePagination: "client", //客户端分页
+                contentType: "application/x-www-form-urlencoded", //请求数据内容格式 默认是 application/json 自己根据格式自行服务端处理
+                dataType: "json", //期待返回数据类型
+                method: "get", //请求方式
+                searchAlign: "left", //查询框对齐方式
+                // queryParamsType: "limit", //查询参数组织方式
+                sortable: true, //是否可排序
+                sortName: 'id',
+                sortOrder: "desc", //默认排序方式
+                // queryParams: function getParams(params) {
+                //     //params obj
+                //     params.other = "otherInfo";
+                //     return params;
+                // },
+                searchOnEnterKey: false, //回车搜索
+                showRefresh: true, //刷新按钮
+                showColumns: true, //列选择按钮
+                buttonsAlign: "left", //按钮对齐方式
+                toolbar: "#toolbar", //指定工具栏
+                toolbarAlign: "right", //工具栏对齐方式
+                uniqueId: 'id',
+                columns: [
+                    {
+                        title: "全选",
+                        field: "select",
+                        checkbox: true,
+                        width: 20, //宽度
+                        align: "center", //水平
+                        valign: "middle" //垂直
+                    },
+                    {
+                        title: "ID", //标题
+                        field: "id", //键名
+                        width: 120,
+
+                    },
+                    {
+                        field: 'course_name',
+                        title: '课程名',
+                        width: 120,
+                        editor: {
+                            type: 'text',
+                            options: {
+                                required: true
+                            }
+                        }
+                    },
+                    {
+                        field: 'author',
+                        title: '作者',
+                        width: 120,
+                        editable: {
+                            type: 'text'
+                        }
+                    },
+                    {
+                        field: 'college',
+                        title: '大学',
+                        width: 220,
+                        editable: {
+                            type: 'text'
+                        }
+                    },
+                    {
+                        field: 'category_Id',
+                        title: '分类',
+                        width: 120,
+                        editable: {
+                            type: 'number'
+                        },
+                        formatter: function (value, row, index) {
+                            return '分类' + value;
+                        }
+                    }, {
+                        field: 'action',
+                        title: '操作',
+                        width: 120,
+                        formatter: function (value, row, index) {
+                            var html = "";
+                            html += '<a href="javascript:" onclick="delRow(' + row.id + ')">删除</a>'
+                            return html;
+                        }
+                    }
+
+
+
+                ],
+
+                onClickRow: function (row, $element) {
+                    //$element是当前tr的jquery对象
+                    //   $element.css("background-color", "aqua");
+
+                }, //单击row事件
+                onDblClickRow: function (row, $element) {
+                    console.log(row);
+                    // console.log($element);
+                    //$element是当前tr的jquery对象
+
+                }, //单击row事件
+
+                locale: "zh-CN", //中文支持
+                detailView: false, //是否显示详情折叠
+                detailFormatter: function (index, row, element) {
+                    var html = '';
+                    $.each(row, function (key, val) {
+                        html += "<p>" + key + ":" + val + "</p>"
+                    });
+                    return html;
+                }
+            });
+
+            $("#addRecord").click(function () {
+                alert("name:" + $("#name").val() + " age:" + $("#age").val());
+            });
+        })
+
+        function tableHeight() {
+            return $(window).height() - 50;
+        }
+
+        /**
+         * 列的格式化函数 在数据从服务端返回装载前进行处理
+         * @param  {[type]} value [description]
+         * @param  {[type]} row   [description]
+         * @param  {[type]} index [description]
+         * @return {[type]}       [description]
+         */
+        // function delRow() {
+        //     console.log(1)
+        //     var ids = getIdSelections();
+        //     console.log(ids)
+        //     $('#mytab').bootstrapTable('remove', {field: 'id',values:ids })
+        // }
+        // #region 操作栏
+        // 删除
+        function delRow(id) {
+
+            $('#mytab').bootstrapTable('remove', {
+                field: "id",   //此处的 “id”对应的是字段名
+                values: [id]
+
+            });
+            $.ajax({
+                url: "http://localhost:3000/course/" + id, //数据源
+                type: 'DELETE',
+                dataType: 'json',
+                success: function () {
+                    $('#mytab').bootstrapTable('refresh')
+                }
+            })
+        }
+
+        // #endregion 
+
+
+        //#region 按钮区
+        //删除按钮
+        $('#delbtn').on('click', function () {
+            var ids = $('#mytab').bootstrapTable('getSelections');
+            var ss = ids[0].id
+            $('#mytab').bootstrapTable('remove', {
+                field: "id",   //此处的 “id”对应的是字段名
+                values: [ss]
+            });
+            $.ajax({
+                url: "http://localhost:3000/course/" + ss, //数据源
+                type: 'DELETE',
+                dataType: 'json',
+                success: function () {
+                    $('#mytab').bootstrapTable('refresh')
+                }
+            })
+        })
+        //添加按钮
+        $('#addbtn').on('click', function () {
+            //往后退保存数据,成功之后提示成功消息,并关闭对话框
+            var arrData = $('#frmadd').serializeArray();
+            arrData.push({
+                name: 'id',
+                value: Date.now()
+            })
+
+            $.ajax({
+                url: 'http://localhost:3000/course',
+                type: 'POST',
+                data: arrData,
+                dataType: 'json'
+
+            }).done(function (data) {
+                //关闭对话框
+                $('#frmadd')[0].reset();
+
+                //刷新表格
+                $('#mytab').bootstrapTable('refresh')
+
+
+            })
+        }
+
+        )
+        //修改按钮
+        $('#editorBtn').on('click', function () {
+            var ids = $('#mytab').bootstrapTable('getSelections');
+            var data = ids[0];
+            $('#author1').val(data.author);
+            $('#category_Id1').val(data.category_Id);
+            $('#course_name1').val(data.course_name);
+            $('#college1').val(data.college);
+
+            $('#cancelbtn').on('click', function () {
+                
+                $('#author1').val(data.author);
+                $('#category_Id1').val(data.category_Id);
+                $('#course_name1').val(data.course_name);
+                $('#college1').val(data.college);
+
+
+            })
+            $('#editbtn').on('click', function () {
+                var arrData = $('#frmadd1').serializeArray();
+
+                console.log(arrData)
+                $.ajax({
+                    url: 'http://localhost:3000/course/' + data.id,
+                    type: 'PUT',
+                    data: arrData,
+                    dataType: 'json'
+
+                }).done(function (data) {
+
+
+                    //刷新表格
+                    $('#mytab').bootstrapTable('refresh')
+
+
+                })
+            })
+        })
+        // #endregion
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <!-- <script src="/lib/require.js" data-main="/js/controllers/student/stu-bootstrap.js"></script> -->
+</body>
+
+</html>

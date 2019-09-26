@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Dashboard Template for Bootstrap</title>
+  <!-- <link rel="stylesheet" href="../style/main.css"> -->
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-table.min.css">
+  <style>
+    .content {
+      display: flex;
+    }
+    .content-r {
+      flex: 1;
+      margin-left: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0" id="aaa">
+    <h1>哈工大后台管理</h1>
+  </nav>
+
+  <div class="content">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              后台管理 <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              权限管理
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              商品列表
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              用户管理
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              商品管理
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              商品权限
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="content-r">
+      <button type="button" class="btn btn-outline-primary">添加</button>
+      <button type="button" class="btn btn-outline-secondary">删除</button>
+      <button type="button" class="btn btn-outline-success">修改</button>
+      <button type="button" class="btn btn-outline-danger">查询</button>
+
+
+      <div>
+        <div>
+          <div class="col-*-12">
+
+            <div id="toolbar">
+              <div class="btn btn-primary" data-toggle="modal" data-target="#addModal">添加记录</div>
+            </div>
+
+            <table id="mytab" class="table table-hover"></table>
+
+            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                      &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">添加记录</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form role="form" action="javascript:void(0)">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="请输入名称">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="age" placeholder="请输入年龄">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="addRecord">提交</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <script src="../lib/jquery-1.12.4.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../lib/bootstrap/js/tableExport.js"></script>
+  <script src="../lib/bootstrap/js/jquery.base64.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap-table.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap-table-export.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      //根据窗口调整表格高度
+      $(window).resize(function () {
+        $('#mytab').bootstrapTable('resetView', {
+          height: tableHeight()
+        })
+      })
+
+      $('#mytab').bootstrapTable({
+        url: "http://localhost:34000/course", //数据源
+        dataField: "rows", //服务端返回数据键值 就是说记录放的键值是rows，分页时使用总记录数的键值为total
+        height: tableHeight(), //高度调整
+        search: true, //是否搜索
+        pagination: true, //是否分页
+        pageSize: 20, //单页记录数
+        pageList: [5, 10, 20, 50], //分页步进值
+        sidePagination: "server", //服务端分页
+        contentType: "application/x-www-form-urlencoded", //请求数据内容格式 默认是 application/json 自己根据格式自行服务端处理
+        dataType: "json", //期待返回数据类型
+        method: "post", //请求方式
+        searchAlign: "left", //查询框对齐方式
+        queryParamsType: "limit", //查询参数组织方式
+        queryParams: function getParams(params) {
+          //params obj
+          params.other = "otherInfo";
+          return params;
+        },
+        searchOnEnterKey: false, //回车搜索
+        showRefresh: true, //刷新按钮
+        showColumns: true, //列选择按钮
+        buttonsAlign: "left", //按钮对齐方式
+        toolbar: "#toolbar", //指定工具栏
+        toolbarAlign: "right", //工具栏对齐方式
+        columns: [{
+            title: "全选",
+            field: "select",
+            checkbox: true,
+            width: 20, //宽度
+            align: "center", //水平
+            valign: "middle" //垂直
+          },
+          {
+            title: "ID", //标题
+            field: "id", //键名
+            width: 120,
+            sortable: true, //是否可排序
+            order: "desc" //默认排序方式
+          },
+          {
+            field: 'course_name',
+              title: '课程名',
+              width: 120,
+              editor: {
+                type: 'text',
+                options: {
+                  required: true
+                }
+              }
+          },
+          {
+            field: 'author',
+              title: '作者',
+              width: 120,
+              editor: {
+                type: 'text'
+              }
+          },
+          {
+              field: 'college',
+              title: '大学',
+              width: 220,
+              editor: {
+                type: 'text'
+              }
+            },
+            {
+              field: 'category_Id',
+              title: '分类',
+              width: 120,
+              editor: {
+                type: 'number'
+              },
+              formatter: function (value, row, index) {
+                return '分类' + value;
+              }
+            },{
+              field: 'action',
+              title: '操作',
+              width: 120,
+              formatter: function (value, row, index) {
+                var html = "";
+                if (row.isEditing) {
+                  html += '<a href="javascript:" onclick="saveRow(' + index + ')">保存</a>'
+                  html += '&nbsp;&nbsp;&nbsp;'
+                  html += '<a href="javascript:" onclick="cancelRow(' + index + ')">取消</a>'
+                } else {
+                  html += '<a href="javascript:" onclick="editRow(' + index + ')">修改</a>'
+                  html += '&nbsp;&nbsp;&nbsp;'
+                  html += '<a href="javascript:" onclick="delRow(' + index + ')">删除</a>'
+                }
+                return html;
+              }
+            },
+            
+          
+        ],
+        onClickRow: function (row, $element) {
+          //$element是当前tr的jquery对象
+          $element.css("background-color", "green");
+        }, //单击row事件
+        locale: "zh-CN", //中文支持
+        detailView: false, //是否显示详情折叠
+        detailFormatter: function (index, row, element) {
+          var html = '';
+          $.each(row, function (key, val) {
+            html += "<p>" + key + ":" + val + "</p>"
+          });
+          return html;
+        }
+      });
+
+      $("#addRecord").click(function () {
+        alert("name:" + $("#name").val() + " age:" + $("#age").val());
+      });
+    })
+
+    function tableHeight() {
+      return $(window).height() - 50;
+    }
+    /**
+     * 列的格式化函数 在数据从服务端返回装载前进行处理
+     * @param  {[type]} value [description]
+     * @param  {[type]} row   [description]
+     * @param  {[type]} index [description]
+     * @return {[type]}       [description]
+     */
+    function infoFormatter(value, row, index) {
+      return "id:" + row.id + " name:" + row.name + " age:" + row.age;
+    }
+  </script>
+
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <script>
+    feather.replace()
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <!-- <script src="/lib/require.js" data-main="/js/controllers/student/stu-bootstrap.js"></script> -->
+</body>
+
+</html>

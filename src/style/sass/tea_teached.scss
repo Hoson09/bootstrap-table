@@ -1,0 +1,102 @@
+.teached-body {
+    background-color: #fbfbfb;
+}
+
+.tea_bottom-tab {
+    width: 1200px;
+    margin: 0 auto;
+
+    .btm-hd {
+        display: flex;
+        justify-content: space-between;
+        margin: 28px 0 16px 0;
+
+        .tab-list {
+            display: flex;
+            justify-content: flex-start;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+
+            .item-tab {
+                width: 100px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #2db0f9;
+                }
+            }
+
+            .bgc {
+                background-color: #2db0f9;
+
+            }
+        }
+
+        .btm-hd-r {
+            width: 100px;
+            height: 40px;
+            background-color: #1bbc9c;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+
+            a {
+                color: #fff;
+            }
+        }
+
+
+    }
+
+    .btm-bd {
+        .btm-bd-1 {
+
+            width: 1200px;
+            // height: 800px;
+            display: none;
+            
+            .tab-item {
+                border: 1px solid #ccc;
+                background-color: #fff;
+                display: flex;
+                // justify-content: space-between;
+                margin-bottom: 10px;
+                height: 240px;
+                img{
+                    width: 230px;
+                    height: 200px;
+                    margin: 18px 20px;
+                }
+
+                .word-wrap {
+                    margin-top: 18px;
+                    width: 850px;
+                    .title-p{
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                    .word {
+                        border-bottom: 1px solid #ccc;
+                        p{
+                            font-size: 15px;
+                        }
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+            .pagenation{
+                margin-top: 20px;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        .on {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,381 @@
+html,
+body,
+div,
+ul,
+li,
+ol,
+div,
+hr,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.class-tit {
+  width: 100%;
+  height: 365px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #ccc;
+}
+
+.class-tit .class-tit-left {
+  width: 410px;
+  height: 365px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.class-tit .class-tit-right {
+  width: 700px;
+  height: 365px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.class-tit .class-tit-right .class-tit-middle {
+  width: 700px;
+  height: 307px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.class-tit .class-tit-right .class-tit-middle .course-title-top {
+  width: 100%;
+  height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.class-tit .class-tit-right .class-tit-middle .course-title-top .course-title-top-t {
+  width: 100%;
+  height: 74px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.class-tit .class-tit-right .class-tit-middle .course-title-top .course-title-top-b {
+  width: 100%;
+  height: 71px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.class-tit .class-tit-right .class-tit-middle .course-title-top .course-title-top-b .course-title-top-b-l {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.class-tit .class-tit-right .class-tit-middle .course-title-top .course-title-top-b .course-title-top-b-r {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.class-tit .class-tit-right .class-tit-middle .course-title-bottom {
+  width: 200px;
+  height: 40px;
+  background-color: #2db0f9;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+}
+
+.stu_list .containers {
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.stu_list .containers .classify {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_list .containers .classify .classify-nav {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.stu_list .containers .include {
+  width: 100%;
+  height: 920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.stu_list .containers .include .class-introduce {
+  width: 900px;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid #ccc;
+  margin: 10px 10px 10px 0;
+}
+
+.stu_list .containers .include .class-introduce .top {
+  width: 100%;
+  height: 330px;
+}
+
+.stu_list .containers .include .class-introduce .top .top-t {
+  width: 100%;
+  height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_list .containers .include .class-introduce .top .top-t .blue {
+  width: 6px;
+  height: 16px;
+  background-color: #2db0f9;
+  margin-right: 10px;
+}
+
+.stu_list .containers .include .class-introduce .top .top-t span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.stu_list .containers .include .class-introduce .top .top-b {
+  width: 100%;
+  height: 255px;
+}
+
+.stu_list .containers .include .class-introduce hr {
+  margin: 0;
+}
+
+.stu_list .containers .include .related {
+  width: 230px;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.stu_list .containers .include .related .related-top {
+  width: 100%;
+  height: 325px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.stu_list .containers .include .related .related-top .top-t {
+  height: 45px;
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.stu_list .containers .include .related .related-top .top-b {
+  height: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_list .containers .include .related .related-top .top-b img {
+  width: 200px;
+  height: 176px;
+}
+
+.stu_list .containers .include .related .related-bottom {
+  width: 100%;
+  height: 580px;
+  border: 1px solid #ccc;
+  margin-top: 16px;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-t {
+  height: 45px;
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-t .bottom-l {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-t .bottom-r {
+  font-size: 12px;
+  color: #2db0f9;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b {
+  width: 100%;
+  height: 535px;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b .bottom-b-t {
+  height: 254px;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b .bottom-b-t .bottom-b-t-t {
+  width: 230px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b .bottom-b-t .bottom-b-t-t img {
+  width: 200px;
+  height: 175px;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b .bottom-b-t .bottom-b-t-b {
+  width: 200px;
+  height: 79px;
+  padding: 0 0 0 20px;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b .bottom-b-b {
+  width: 100%;
+  height: 254px;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b .bottom-b-b .bottom-b-b-t {
+  width: 230px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b .bottom-b-b .bottom-b-b-t img {
+  width: 200px;
+  height: 175px;
+}
+
+.stu_list .containers .include .related .related-bottom .bottom-b .bottom-b-b .bottom-b-b-b {
+  width: 200px;
+  height: 79px;
+  padding: 0 0 0 20px;
+}
+/*# sourceMappingURL=stu_list.css.map */

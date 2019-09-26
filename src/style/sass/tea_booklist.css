@@ -1,0 +1,117 @@
+.booklist-body {
+  background-color: #fbfbfb;
+}
+
+.booklist-body .crumbs {
+  width: 1200px;
+  margin: 10px auto;
+}
+
+.booklist-body .crumbs .second-a {
+  color: #000;
+}
+
+.tea_booklist {
+  width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tea_booklist .tea-booklist-l {
+  width: 230px;
+  height: 300px;
+}
+
+.tea_booklist .tea-booklist-r {
+  margin-left: 10px;
+  width: 900px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.tea_booklist .tea-booklist-r .tb-top {
+  padding: 0 30px;
+  width: 900px;
+  height: 51px;
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tea_booklist .tea-booklist-r .booklist-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin-top: 20px;
+  height: 180px;
+}
+
+.tea_booklist .tea-booklist-r .booklist-item .booklist-l img {
+  margin: 0 30px;
+  width: 200px;
+  height: 159px;
+}
+
+.tea_booklist .tea-booklist-r .booklist-item .booklist-r .bookr-p {
+  margin: 0;
+}
+
+.tea_booklist .tea-booklist-r .booklist-item .booklist-r .bookr-div p {
+  padding: 0;
+  margin: 0;
+}
+
+.tea_booklist .tea-booklist-r .tb-under {
+  width: 900px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tea-accordion .accordion-list .accordion-item {
+  width: 230px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.tea-accordion .accordion-list .accordion-item .item-hd {
+  background-color: #ccc;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.tea-accordion .accordion-list .accordion-item .item-hd:hover {
+  background-color: #cfdfcf;
+}
+
+.tea-accordion .accordion-list .accordion-item .item-bd {
+  text-align: center;
+  display: none;
+}
+
+.tea-accordion .accordion-list .accordion-item .item-bd .item-bd-a {
+  margin-top: 2px;
+  background-color: #aaa;
+  cursor: pointer;
+}
+/*# sourceMappingURL=tea_booklist.css.map */

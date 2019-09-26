@@ -1,0 +1,39 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-10 10:26:29
+ * @LastEditTime: 2019-08-15 15:25:48
+ * @LastEditors: Please set LastEditors
+ -->
+
+      <div class="tb-top">
+         <div class="top1">
+            <p>一共{{pagenum}}条数据</p>
+         </div>
+         <div class="top2">
+            <div>&lt;<span>{{cur}}/{{pageall}}</span> &gt; </div>
+         </div>
+      </div>
+      {{each data as val index}}
+      <div class="booklist-item">
+       <div class="booklist-l">
+          <a  href="/view/teacher/tea_book.html?id={{val.id}}">
+          <img src="{{val.imgUrl}}" alt="教材图片">
+         </a>
+       </div>
+       <div class="booklist-r">
+          <p class="bookr-p">书名: {{val.title}}</p>
+          <p class="bookr-p">作者: {{val.author}}</p>
+          <p class="bookr-p">价格:  <span>￥{{val.price}}/年</span></p>
+          <div class="bookr-div">{{#  val.description}}  </div>
+          
+          <p  class="bookr-p"><span class="glyphicon glyphicon-user"></span>{{val.count}}</p>
+
+         </div>
+      </div>
+      
+  {{/each}}
+  <div class="tb-under">
+      <p>共<span class="num-course">{{pagenum}}</span>个教材</p>
+      <div class="page-div"></div>
+  

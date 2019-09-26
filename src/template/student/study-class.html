@@ -1,0 +1,24 @@
+{{each data as val index}}
+<div class="centent-top">
+   <div class="centent-top-l">
+      <img src="{{val.bgimg}}" alt="">
+   </div>
+   <div class="centent-top-r">
+      <div class="centent-top-r-top">
+         <h4 class="title">{{val.title}}</h4>
+         <div class="title-tea">
+            <div class="title-a"><span>任课教师</span>&nbsp;<span>{{val.author}} {{val.college}}</span></div>
+            <div class="title-b"><span>邀请码</span>&nbsp;<span>{{val.invitecode}}</span></div>
+            <div class="title-c"><span>截止时间</span>&nbsp;<span>{{#val.subon}}</span></div>
+            <div class="title-d glyphicon glyphicon-user"> {{#val.studycount}}</div>
+         </div>
+      </div>
+      <div class="centent-top-r-bottom">
+         <div class="job"><span>第一章作业</span><span>{{val.studytime}}</span></div>
+         <div class="joba"><span>第一章作业</span><span>{{val.studytime}}</span></div>
+         <div class="activity"><span>活动通知标题</span><span>{{val.subon}}</span></div>
+         <div class="inform"><span>未读通知标题</span></div>
+      </div>
+   </div>
+</div>
+{{/each}}

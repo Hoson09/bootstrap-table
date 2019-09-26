@@ -1,0 +1,22 @@
+<div class="accordioner-top">
+   <h3>共<span class="num-course">100</span>个课程</h3>
+   <!-- <p><span class="num-prev"></span><<span class="num-cur"></span>/<span class="num-all"></span> <span
+         class="num-next">></span></p> -->
+</div>
+<!-- 一个div的宽度 -->
+<div class="accordioner-middle">
+   {{each data as val index}}
+   <div class="middle-acc">
+      <div class="middle-a">
+         <div class="middle-acc-top"><img src="{{val.img}}" alt=""></div>
+         <div class="middle-acc-middle">{{val.title}}</div>
+         <div class="middle-acc-bottom"><span>{{val.author}} </span> <span>{{val.college}}</span></div>
+      </div>
+   </div>
+   {{/each}}
+</div>
+<div class="accordioner-bottom">
+   <h3>共<span class="num-course">{{pagenum}}</span>个课程</h3>
+   <div class="right-bot-l"></div>
+</div>
+      

@@ -1,0 +1,66 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-16 09:06:39
+ * @LastEditTime: 2019-08-16 20:35:10
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <link rel="stylesheet" href="/lib/jquery-easyui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" href="/lib/jquery-easyui/themes/icon.css">
+    <title>哈工大后台登录页面</title>
+    <style>
+    .login2-btn{
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background-color: aqua;
+        width: 100px;
+        text-align: center;
+        margin: 0 auto;
+      
+    }
+    .login-main{
+        width: 250px;
+        height: 350px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -175px 0 0 -125px;
+
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="login-main">
+        <h1>用户登录</h1>
+        <form id="login2-frm">
+          <div class="login-all">
+    
+            <div class="login-user">
+              <p>用户名:</p>
+              <input  class="easyui-textbox" data-options="iconCls:'icon-man',required:true,validType:['length[3,8]']"  placeholder="请输入用户名" value="zxc" name="username">
+            </div>
+            <div class="login-user">
+              <p>密码&nbsp;&nbsp;&nbsp;:</p>
+              <input type="password"class="easyui-passwordbox" data-options="required:true,validType:['length[3,8]']" prompt="Password" iconWidth="28" value="zxc" name="password">
+            </div>
+    
+            <img class="yazhma" src="http://192.168.1.130:8888/api/code" alt="验证码">
+            <div class="login2-btn">
+              登录
+            </div>
+          </div>
+        </form>
+      </div>
+    <script src="/lib/require.js" data-main="/js/controllers/teacher/login2controller.js"></script>
+    
+</body>
+</html>

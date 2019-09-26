@@ -1,0 +1,93 @@
+html,
+body,
+div,
+ul,
+li,
+ol,
+div,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.login-body {
+  background-color: #f0f4f3;
+  background: url(../../img/timg.jpg);
+}
+
+.login-body .login-nav {
+  background-color: #25b887;
+  height: 70px;
+  border: 1px solid #25b887;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+
+.login-body .login-nav p {
+  color: #fff;
+  font-size: 40px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.login-body .login-main {
+  width: 600px;
+  height: 400px;
+  margin: 110px auto;
+  background-color: #adc;
+  background-image: -webkit-gradient(linear, left top, right top, from(blue), color-stop(50%, red), color-stop(70%, yellow), to(purple));
+  background-image: linear-gradient(to right, blue, red 50%, yellow 70%, purple);
+  text-align: center;
+  border-top: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.login-body .login-main h1 {
+  margin-top: 30px;
+}
+
+.login-body .login-main #login-frm {
+  width: 250px;
+  margin: 50px auto;
+}
+
+.login-body .login-main #login-frm div {
+  margin: 20px 0;
+}
+
+.login-body .login-main #login-frm .login-all .login-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.login-body .login-main #login-frm .login-all .login-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.login-body .login-main #login-frm .login-all .login-check .login-check-2 {
+  margin-left: 30px;
+}
+
+.login-body .login-main #login-frm .login-all .login-btn {
+  background-color: #25b887;
+  border: 1px solid #25b887;
+  border-radius: 5px;
+  margin: 30px auto;
+  width: 200px;
+  color: #fff;
+  cursor: pointer;
+}
+/*# sourceMappingURL=login.css.map */

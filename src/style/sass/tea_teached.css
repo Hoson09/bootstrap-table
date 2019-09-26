@@ -1,0 +1,119 @@
+.teached-body {
+  background-color: #fbfbfb;
+}
+
+.tea_bottom-tab {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.tea_bottom-tab .btm-hd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 28px 0 16px 0;
+}
+
+.tea_bottom-tab .btm-hd .tab-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.tea_bottom-tab .btm-hd .tab-list .item-tab {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.tea_bottom-tab .btm-hd .tab-list .item-tab:hover {
+  background-color: #2db0f9;
+}
+
+.tea_bottom-tab .btm-hd .tab-list .bgc {
+  background-color: #2db0f9;
+}
+
+.tea_bottom-tab .btm-hd .btm-hd-r {
+  width: 100px;
+  height: 40px;
+  background-color: #1bbc9c;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+}
+
+.tea_bottom-tab .btm-hd .btm-hd-r a {
+  color: #fff;
+}
+
+.tea_bottom-tab .btm-bd .btm-bd-1 {
+  width: 1200px;
+  display: none;
+}
+
+.tea_bottom-tab .btm-bd .btm-bd-1 .tab-item {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  height: 240px;
+}
+
+.tea_bottom-tab .btm-bd .btm-bd-1 .tab-item img {
+  width: 230px;
+  height: 200px;
+  margin: 18px 20px;
+}
+
+.tea_bottom-tab .btm-bd .btm-bd-1 .tab-item .word-wrap {
+  margin-top: 18px;
+  width: 850px;
+}
+
+.tea_bottom-tab .btm-bd .btm-bd-1 .tab-item .word-wrap .title-p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tea_bottom-tab .btm-bd .btm-bd-1 .tab-item .word-wrap .word {
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tea_bottom-tab .btm-bd .btm-bd-1 .tab-item .word-wrap .word p {
+  font-size: 15px;
+}
+
+.tea_bottom-tab .btm-bd .btm-bd-1 .pagenation {
+  margin-top: 20px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tea_bottom-tab .btm-bd .on {
+  display: block;
+}
+/*# sourceMappingURL=tea_teached.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACE,2BADyB,CACzB,eAAe,CAAC;EACd,yBAAyB;EACzB,eAAe,EAAE,MAAM;CACxB",
+    "sources": [
+        "effect-coverflow.scss"
+    ],
+    "names": [],
+    "file": "effect-coverflow.css"
+}

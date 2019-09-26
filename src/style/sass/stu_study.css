@@ -1,0 +1,204 @@
+body,
+html,
+div,
+table,
+td,
+tr,
+p,
+ul,
+li,
+span {
+  padding: 0;
+  margin: 0;
+}
+
+.stu-study .containerc {
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.stu-study .containerc .management {
+  width: 100%;
+  height: 86px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu-study .containerc .management .man-l {
+  width: 208px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.stu-study .containerc .management .man-l .l-l {
+  width: 104px;
+  height: 35px;
+  background-color: #2db0f9;
+  border: 1px solid #ccc;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2px;
+}
+
+.stu-study .containerc .management .man-l .l-r {
+  width: 104px;
+  height: 35px;
+  border: 1px solid #ccc;
+  color: #666666;
+  border-left: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2px;
+}
+
+.stu-study .containerc .management .man-r {
+  width: 100px;
+  height: 35px;
+  border: 1px solid #ccc;
+  background-color: #1bbc9c;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2px;
+}
+
+.stu-study .containerc .man-centent {
+  width: 100%;
+  height: 750px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.stu-study .containerc .man-centent .centent-top {
+  width: 100%;
+  height: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #ccc;
+}
+
+.stu-study .containerc .man-centent .centent-top .centent-top-l {
+  width: 280px;
+  height: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu-study .containerc .man-centent .centent-top .centent-top-l img {
+  width: 230px;
+  height: 200px;
+}
+
+.stu-study .containerc .man-centent .centent-top .centent-top-r {
+  width: 780px;
+  height: 100%;
+}
+
+.stu-study .containerc .man-centent .centent-top .centent-top-r .centent-top-r-top {
+  width: 100%;
+  height: 100px;
+}
+
+.stu-study .containerc .man-centent .centent-top .centent-top-r .centent-top-r-top {
+  width: 100%;
+  height: 140px;
+}
+
+.stu-study .containerc .man-centent .centent-top .centent-top-r .centent-top-r-top .title {
+  height: 50px;
+}
+
+.stu-study .containerc .man-centent .centent-top .centent-top-r .centent-top-r-top .title-tea {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.stu-study .containerc .man-centent .centent-top .centent-top-r .centent-top-r-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.stu-study .containerc .pagger {
+  width: 100%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu-study .containerc .pagger .pager-l {
+  font-size: 14px;
+}
+
+.stu-study .containerc .pagger .pager-l span {
+  color: #2db0f9;
+}
+/*# sourceMappingURL=stu_study.css.map */

@@ -1,0 +1,86 @@
+html,
+body,
+div,
+ul,
+li,
+ol,
+div,
+p {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+//登录页面样式
+.login-body {
+    background-color: #f0f4f3;
+    background: url(../../img/timg.jpg) ;
+
+    .login-nav {
+        background-color: #25b887;
+        height: 70px;
+        border: 1px solid #25b887;
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+        background-size: 40px 40px;
+
+        p {
+            color: #fff;
+            font-size: 40px;
+            line-height: 70px;
+            text-align: center;
+        }
+    }
+
+    .login-main {
+        width: 600px;
+        height: 400px;
+        margin: 110px auto;
+        background-color: #adc;
+        background-image: linear-gradient(to right, blue, red 50%, yellow 70%, purple);
+        text-align: center;
+        border-top: 1px solid #fff;
+        border-radius: 50%;
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        #login-frm {
+            div {
+                margin: 20px 0;
+            }
+
+            width: 250px;
+            margin: 50px auto;
+
+            .login-all {
+                .login-user {
+                    display: flex;
+                    justify-content: flex-start;
+                }
+
+                .login-check {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .login-check-2 {
+                        margin-left: 30px;
+                    }
+                }
+
+                .login-btn {
+                    background-color: #25b887;
+                    border: 1px solid #25b887;
+                    border-radius: 5px;
+                    margin: 30px auto;
+                    width: 200px;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

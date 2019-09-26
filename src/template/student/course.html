@@ -1,0 +1,10 @@
+<div class="photo">
+  <div class="photo-list-wrap">
+    {{each data as val index}}
+    <div class="photo-item" uid="{{val.id}}">
+      <div class="img"><a href="/view/stu/stu_list.html?id={{val.id}}"><img src="{{val.img}}" alt=""></a></div>
+      <p class="class-name">{{val.title}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>

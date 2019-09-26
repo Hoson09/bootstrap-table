@@ -1,0 +1,9 @@
+{
+  "ajaxSetup.js": "ajaxSetup-21e3ba60c5.js",
+  "controllers/loginController.js": "controllers/loginController-7e15f154ec.js",
+  "controllers/student/stu_list.js": "controllers/student/stu_list-f37484f821.js",
+  "controllers/student/stu_shou.js": "controllers/student/stu_shou-4d34cd70a7.js",
+  "controllers/teacher/tea_shoucontriller.js": "controllers/teacher/tea_shoucontriller-07d7fdfbe5.js",
+  "service/api.js": "service/api-fb9f4665fb.js",
+  "tmpl/tpl.js": "tmpl/tpl-25aff5272c.js"
+}

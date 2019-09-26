@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../lib/jquery-easyui-1.8.1/themes/bootstrap/easyui.css">
+  <link rel="stylesheet" href="../lib/jquery-easyui-1.8.1/themes/icon.css">
+
+  <script src="../lib/jquery-1.12.4.min.js"></script>
+  <script src="../lib/jquery-easyui-1.8.1/jquery.easyui.min.js"></script>
+  <script src="../lib/jquery-easyui-1.8.1/locale/easyui-lang-zh_CN.js"></script>
+  <title>登录页面</title>
+  <style>
+    html,
+    body,
+    div,
+    h1,
+    h2,
+    h3,
+    p,
+    table,
+    tr,
+    td {
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      background-color: antiquewhite;
+    }
+
+    .logo {
+      width: 500px;
+      height: 300px;
+      border: 1px solid #ccc;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -251px;
+      margin-top: -151px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background-color: blueviolet;
+      border-radius: 50%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <div class="centent">
+      <form id="frmLogin">
+        <table>
+          <tr>
+            <td>用户名:</td>
+            <td><input class="easyui-textbox" prompt="用户名" required
+                data-options="iconCls:'icon-search',validType:['text','length[3,20]']"
+                style="width:100%;height:34px;padding:10px" value="zxc" name="username">
+            </td>
+          </tr>
+          <tr>
+            <td>密码:</td>
+            <td><input class="easyui-passwordbox" prompt="密码" required iconWidth="28"
+                data-options="validType:['password','length[3,20]']" value="zxc" style="width:100%;height:34px;padding:10px"
+                name="password"></td>
+          </tr>
+          <tr class="easyui">
+            <td class="login-check-1">
+              <input type="radio" name="123" id="login-easy"><label for="login-student">easyui</label>
+            </td>
+          </tr>
+          <tr class="bootstrap">
+            <td class="login-check-2">
+              <input type="radio" name="123" id="login-bootstrap"><label for="longin-teacher">bootstrap</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="button" value="登录" id="btnLogin">
+            </td>
+          </tr>
+        </table>
+        <img id="yzm" src="http://192.168.1.130:8888/api/code" alt="Breaking Borders Logo" height="65" width="68">
+      </form>
+    </div>
+  </div>
+  <script>
+      (function (w, d, s, g, o) {
+        var x = document.createElement(s),
+          s = document.getElementsByTagName(s)[0];
+        w[g] = o;
+        x.async = true;
+        x.charset = 'utf-8';
+        x.src = 'https://cdn.xiankefu.com/dist/xiankefu.js';
+        s.parentNode.insertBefore(x, s);
+      })(window, document, 'script', 'XIANKEFU_GLOBAL', {
+        bid: '0764047b5129ed6ed828fac0ec7f9a3f'
+      });
+    </script>
+  <script src="/lib/require.js" data-main="/js/controllers/loginControllersa.js"></script>
+</body>
+
+</html>

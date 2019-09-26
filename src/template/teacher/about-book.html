@@ -1,0 +1,17 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-09 18:54:34
+ * @LastEditTime: 2019-08-09 19:39:25
+ * @LastEditors: Please set LastEditors
+ -->
+{{each vall as val index}}
+<div class="spring">
+    <a href="/view/teacher/tea_book.html?id={{val.id}}">
+    
+        <img src="{{val.imgUrl}}" alt="相关教材">
+        <p>{{val.title}}</p>
+    </a>
+
+</div>
+{{/each}}

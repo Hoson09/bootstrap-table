@@ -1,0 +1,113 @@
+.booklist-body{
+    background-color: #fbfbfb;
+    .crumbs{
+        width: 1200px;
+        margin: 10px auto;
+        
+       .second-a{
+           color: #000;
+       }
+    }
+}
+
+.tea_booklist {
+    width: 1200px ;
+    // height: 2100px;
+    margin: 0 auto;
+    display:flex;
+    .tea-booklist-l{
+        width: 230px;
+        height: 300px;
+        // border: 1px solid #ccc;  
+    }
+    .tea-booklist-r{
+        margin-left:10px;
+        width: 900px;
+        border: 1px solid #ccc;
+        // height: 2100px;
+        background-color: #fff;
+        .tb-top{
+            padding: 0 30px;
+
+            width: 900px;
+            height: 51px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .booklist-item{
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            // padding-bottom: 10px;
+            margin-top:20px ;
+            height: 180px;   
+            
+            .booklist-l{
+               
+                img{
+                    margin: 0 30px;
+                    width: 200px;
+                    height: 159px;
+                }
+            }  
+            .booklist-r{
+                .bookr-p {
+                    margin:0 ;
+                    
+                }
+                .bookr-div{
+                    p{
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .tb-under{
+            width: 900px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+        }
+    }
+}
+
+//手风琴
+
+.tea-accordion{
+    .accordion-list{
+        .accordion-item{
+            width: 230px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            border:1px solid #ccc;
+            .item-hd{
+                background-color: #ccc;
+                text-align: center;
+                line-height: 30px;
+                height: 30px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #cfdfcf;
+                }
+                
+            }
+            .item-bd{
+                // height: 200px;
+                text-align: center;
+                // background-color: #aaaa;
+                display: none   ;
+                .item-bd-a {
+                    margin-top: 2px;
+                    background-color: #aaa;
+                    cursor: pointer;
+                }
+                
+            }
+        }
+        
+    }
+}

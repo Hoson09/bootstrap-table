@@ -1,0 +1,15 @@
+{{each data as val index}}
+{{if data[index].pid == 0}}
+<li class="content-content">
+   <div class="centent-t">{{val.name}}</div>
+   <ul class="centent-body">
+      {{each data as item j}}
+      {{if data[j].pid === data[index].id}}
+      <li class="centent-b" uid="{{item.id}}">{{item.name}}
+      </li>
+      {{/if}}
+      {{/each}}
+   </ul>
+</li>
+{{/if}}
+{{/each}}

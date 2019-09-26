@@ -1,0 +1,53 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-13 16:18:11
+ * @LastEditTime: 2019-08-14 15:59:33
+ * @LastEditors: Please set LastEditors
+ -->
+
+<div class="tea-accordion">
+    <!-- 普通手风琴写法 -->
+    <!-- <ul class="accordion-list">
+        <li class="accordion-item on">
+            <div class="item-hd"> <span class="glyphicon glyphicon-plus" ></span> 一级项目</div>
+            <div class="item-bd">二级项目</div>
+        </li>
+        <li class="accordion-item">
+            <div class="item-hd"> <span class="glyphicon glyphicon-plus" ></span> 一级项目</div>
+            <div class="item-bd">二级项目</div>
+        </li>
+        <li class="accordion-item">
+            <div class="item-hd"> <span class="glyphicon glyphicon-plus" ></span> 一级项目</div>
+            <div class="item-bd">二级项目</div>
+        </li>
+        <li class="accordion-item">
+            <div class="item-hd"> <span class="glyphicon glyphicon-plus" ></span> 一级项目</div>
+            <div class="item-bd">二级项目</div>
+        </li>
+        <li class="accordion-item">
+            <div class="item-hd"> <span class="glyphicon glyphicon-plus" ></span> 一级项目</div>
+            <div class="item-bd">二级项目</div>
+        </li>
+    </ul> -->
+
+    <!-- 根据数据手风琴的写法 -->
+    <ul class="accordion-list">
+        {{each data as val index}}
+        {{if data[index].pid == 0}}
+        <li class="accordion-item">
+            <div class="item-hd"><span class="glyphicon glyphicon-plus"></span>{{val.name}}</div>
+            <ul class="item-bd">
+             {{each data as item j}}
+             {{if data[j].pid === data[index].id}}
+             <li class="item-bd-a" uid="{{item.id}}">
+                 {{item.name}}
+             </li>
+             {{/if}}
+             {{/each}}
+            </ul>
+        </li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>

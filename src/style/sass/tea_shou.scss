@@ -1,0 +1,252 @@
+// 教师端首页css
+
+ul {
+    list-style: none;
+}
+// 轮播图区域
+
+
+.tea-index {
+    width: 100%;
+
+    ul {
+        list-style: none;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 400px;
+    }
+
+
+}
+
+
+
+//#region导航栏
+.site-nav {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #fff;
+
+    .site-nav-l {
+        width: 310px;
+    }
+
+
+    .site-nav-m {
+        input {
+            width: 500px;
+        }
+
+        align-self: center;
+    }
+
+    .site-nav-r {
+        width: 300px;
+
+        height: 62px;
+
+        .site-list {
+            height: 62px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .tr-dialog {
+                width: 100px;
+                height: 62px;
+
+                .tr-dialog-hd {
+                    position: relative;
+                    margin:-10px 0 0 0;
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        border-top: 5px solid #1c2f4e;
+                        border-right: 5px solid transparent;
+                        border-left: 5px solid transparent;
+                        position: absolute;
+                        right: 0px;
+                        top: 20px;
+
+                    }
+
+                    display: flex;
+
+                    a {
+                        margin-top: 10px;
+                        margin-left: 4px;
+                    }
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+                }
+
+            }
+
+            .tw-dialog {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    border-top: 5px solid #1c2f4e;
+                    border-right: 5px solid transparent;
+                    border-left: 5px solid transparent;
+                    position: absolute;
+                    right: -14px;
+                    top: 10px;
+                }
+
+               
+            }
+
+            .site-item {
+                align-self: center;
+                height: 20px;
+            }
+        }
+    }
+
+}
+
+
+.main-nav {
+    position: relative;
+    width: 100%;
+    height: 60px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #3598db;
+        z-index: -1;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        background-color: #e7594d;
+        z-index: -1;
+    }
+
+    .container1 {
+        width: 1200px;
+        height: 100%;
+        background-color: #3598db;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        .main-nav-l {
+            background-color: #3598db;
+            width: 375px;
+            height: 60px;
+
+            .main-nav-list {
+                margin-top: 18px;
+                display: flex;
+
+                .main-item {
+                    margin-right: 36px;
+                }
+
+                // justify-content: space-between;
+                .mid {
+                    border-left: 1px solid #fff;
+                    padding-left: 33px;
+                }
+
+                a {
+                    color: #fff;
+                    font-size: 16px;
+                    line-height: 16px;
+                }
+            }
+        }
+
+        .main-nav-r {
+            background-color: #e7594d;
+            width: 350px;
+
+            .main-list1 {
+                display: flex;
+                margin-top: 20px;
+
+                .left {
+                    border-right: 1px solid #fff;
+                }
+
+                .main-item1 {
+                    padding: 0 20px 0 20px;
+
+                    a {
+                        font-size: 14px;
+                        color: #fff;
+                    }
+
+                }
+            }
+        }
+
+    }
+}
+
+//#endregion导航栏
+
+//#region教材模板样式
+.teacher-book {
+    width: 1200px;
+    margin: 0 auto;
+
+    .book-top {
+        border-left: 8px solid #2db0f9;
+        font-size: 22px;
+        margin-top: 30px;
+        padding-left: 18px;
+    }
+
+    .book-all {
+        width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+
+        .book {
+
+            flex: 1;
+            margin: 20px;
+            width: 200px;
+
+            img {
+                width: 200px;
+            }
+        }
+
+    }
+
+}
+
+//#endregion教材模板

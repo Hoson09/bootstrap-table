@@ -1,0 +1,383 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-17 14:35:27
+ * @LastEditTime: 2019-08-19 15:31:08
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/lib/jquery-easyui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" href="/lib/jquery-easyui/themes/icon.css">
+    <script src="/lib/require.js"></script>
+    <script src="/lib/jquery-easyui/jquery.min.js"></script>
+    <script src="/lib/cookie/src/js.cookie.js"></script>
+    <script src="/js/service/api.js"></script>
+    <script src="/lib/jquery-easyui/jquery.easyui.min.js"></script>
+    <script src="/lib/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+
+    <title>课程列表的crud</title>
+    
+
+</head>
+
+<body>
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'north'">
+            <input id="ss">
+    
+            <div id="mm" style="width:120px">
+                <div data-options="name:'course_name',iconCls:'icon-ok'">课程名</div>
+                <div data-options="name:'college',iconCls:'icon-ok'">大学</div>
+            </div>
+        </div>
+        <div data-options="region:'center'">
+
+            <table id="coursett"></table>
+        </div>
+
+    </div>
+    <!-- 添加弹出层 -->
+    <div style="display: none;" class="add-dialog">
+        <form id="frmAdd">
+            <table>
+                <tr>
+                    <td>课程名</td>
+                    <td>
+                        <input type="text" name="course_name" id="course_name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>作者</td>
+                    <td>
+                        <input type="text" name="author" id="author">
+                    </td>
+                </tr>
+                <tr>
+                    <td>大学</td>
+                    <td>
+                        <input type="text" name="college" id="college">
+                    </td>
+                </tr>
+                <tr>
+                    <td>分类</td>
+                    <td>
+                        <select type="text" name="category_Id" id="category_Id">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        $(function () {
+            $.parser.parse();
+            initTable();
+
+            initSearchbox();
+
+        });
+        //初始化搜索框
+        function initSearchbox() {
+            $('#ss').searchbox({
+                width:300,
+                searcher: function (value, name) {
+                    // alert(value + "," + name)
+                // initTable({course_name_like:value,colleage_like:value})
+                console.log('{"'+name+'_like":"'+value+'"}')
+                var param= $.parseJSON('{"'+name+'_like":"'+value+'"}');
+                initTable(param)
+                },
+                menu: '#mm',
+                prompt: '请输入搜索的信息'
+            });
+        }
+        //初始化数据
+        function initTable(param) {
+            $('#coursett').datagrid({
+                // url: '/api/course',//rows:一页有多少条，page：请求当前页
+                title: '课程列表',
+                width: 800,
+                height: 400,
+                fit:true,
+                fitColumns: true,
+                method: 'GET',  // http请求的方法
+                idField: 'id',  // 主键
+                loadMsg: '正在加载用户的信息...',
+                pagination: true, // 是否用分页控件
+                singleSelect: true, // 是否是单行选中
+                pageSize: 10,  // 默认一页多少条
+                pageNumber: 1, // 默认显示第几页
+                pageList: [10, 20, 30],
+                queryParams: param,//让表格在加载数据的时候，额外传输的数据。
+                onBeforeLoad: function (param) {  // 表格控件请求之前，可以设置相关参数。
+                    // param = {page: 1, rows: 10}
+                    param._page = param.page;
+                    param._limit = param.rows;
+                    param._sort = 'id';
+                    param._order = 'desc'; //desc降序 asc 升序
+                },
+                loader: function (param, successfn, errorfn) {
+                    $.ajax({
+                        url: 'http://localhost:3000/course',
+                        data: param,  // 增加了  _page 和_limit  
+                        type: 'GET',
+                        dataType: 'json',
+                        success:
+                            function (resData, status, xhr) {
+                                var total = parseInt(xhr.getResponseHeader('X-Total-Count'));
+                                var datagridData = { rows: resData, total: total };
+                                successfn(datagridData);
+                            },
+                        error: errorfn
+                    });
+                },
+                onLoadSuccess: function (data) {  // 后台请求成功之后，自动调用次方法
+                    console.log(data);
+                },
+                onDblClickRow: function (rowIndex, rowData) {
+                    // $.messager.alert('消息',rowIndex,'info');
+                    console.log(rowIndex)
+                    $('#coursett').datagrid('beginEdit', rowIndex);
+                },
+                onBeforeEdit: function (rowIndex, rowData) {
+                    rowData.isEditing = true;
+                    $('#coursett').datagrid('refreshRow', rowIndex);
+                },
+                onCancelEdit: function (rowIndex, rowData) {
+                    rowData.isEditing = false;
+                    $('#coursett').datagrid('refreshRow', rowIndex);
+                }, onEndEdit: function (rowIndex, rowData, changes) {
+                    rowData.isEditing = false;
+                    $('#coursett').datagrid('refreshRow', rowIndex);
+
+                },
+                //表头内容
+                columns: [[
+                    { field: 'ck', checkbox: true, align: 'left', width: 50 },
+                    { field: 'id', title: '编号', width: 80, editor: { type: 'text' } },
+                    { field: 'course_name', title: '课程名', width: 120, editor: { type: 'text' } },
+                    { field: 'author', title: '作者', width: 120, editor: { type: 'text' } },
+                    { field: 'college', title: '大学', width: 220, editor: { type: 'text' } },
+                    {
+                        field: 'category_Id', title: '分类', width: 120, formatter: function (value) {
+                            return '类别' + value;
+                        }
+                    },
+                    {
+                        field: 'action', title: '操作', width: 120, formatter: function (value, row, index) {
+                            var html = "";
+                            if (row.isEditing) {
+                                html += '<a href="javascript:" onclick="saveRow(' + index + ')">保存</a>&nbsp;&nbsp;&nbsp;'
+                                html += '<a href="javascript:" onclick="cancelEdit(' + index + ')">取消</a>'
+                            } else {
+                                html += '<a href="javascript:" onclick="editRow(' + index + ')">修改</a>&nbsp;&nbsp;&nbsp;'
+                                html += '<a href="javascript:" onclick="delRow(' + index + ')">删除</a>'
+                            }
+                            return html;
+                        }
+
+                    }
+
+                ]],
+
+                toolbar: [
+                    {
+                        id: 'btnDownShelf',
+                        text: '添加',
+                        iconCls: 'icon-add',
+                        handler: function () {
+                            //添加一个添加的层
+                            $('.add-dialog').dialog({
+                                title: '添加课程信息',
+                                width: 400,
+                                height: 200,
+                                closed: false,
+                                minimizable: true,
+                                maximizable: true,
+                                resizable: true,
+                                modal: true,
+                                buttons: [{
+                                    text: '保存',
+                                    handler: function () {
+                                        //往后退保存数据,成功之后提示成功消息,并关闭对话框
+                                        var arrData = $('#frmAdd').serializeArray();
+                                        arrData.push({
+                                            name: 'id',
+                                            value: Date.now()
+                                        })
+
+                                        $.ajax({
+                                            url: 'http://localhost:3000/course',
+                                            type: 'POST',
+                                            data: arrData,
+                                            dataType: 'json'
+
+                                        }).done(function (data) {
+                                            //关闭对话框
+                                            $('#frmAdd')[0].reset();
+                                            $('.add-dialog').dialog('close');
+                                            //刷新表格
+                                            $('#coursett').datagrid('reload');
+                                            //提醒用户添加成功
+                                            $.messager.show({
+                                                title: '添加提醒',
+                                                msg: '添加成功',
+                                                timeout: 1000
+                                            })
+                                        }).fail(function () {
+                                            $.messager.alert('添加提醒', '添加失败', 'warning')
+                                        })
+                                    }
+                                }, {
+                                    text: '关闭',
+                                    handler: function () {
+                                        $.messager.confirm('提醒', '请确认是否取消添加信息', function (r) {
+                                            if (!r) {
+                                                reuturn;
+                                            }
+                                            //清空添加的表单,另外关闭对话框
+
+                                            $('#frmAdd')[0].reset();
+                                            $('.add-dialog').dialog('close');
+
+                                        })
+
+                                    }
+                                }]
+                            });
+                        }
+                    },
+                    {
+                        id: 'cencelDownShelf',
+                        text: '取消',
+                        iconCls: 'icon-ok',
+                        handler: function () {
+                            $('#coursett').datagrid('clearSelections');
+                        }
+                    },
+                    {
+                        id: 'btnDelete',
+                        text: '删除',
+                        iconCls: 'icon-cancel',
+                        handler: function () {
+                            var row = $('#coursett').datagrid('getSelected');
+                            if (row) {
+                                var delIndex = $('#coursett').datagrid('getRowIndex', row);
+                                delRow(delIndex);
+                            $('#coursett').datagrid('clearSelections');
+                                
+                              
+                            } else {
+                                $.messager.alert('提醒消息', '请选择要删除的行', 'info');
+                            }
+                        }
+                    }, {
+                        id: 'btnEdit',
+                        text: '修改',
+                        iconCls: 'icon-edit',
+                        handler: function () {
+                        }
+                    }],
+
+            });
+            var pager = $('#coursett').datagrid('getPager');
+            pager.pagination({ // 设置分页器的布局
+                layout: ['list', 'first', 'prev', 'links', 'next', 'last', 'refresh', 'last']
+            });
+        }
+        function editRow(rowIndex) {
+            $('#coursett').datagrid('beginEdit', rowIndex);
+            //修改当前的isEditing ==> true
+
+            //刷新当前数据
+        }
+        function cancelEdit(rowIndex) {
+            $('#coursett').datagrid('cancelEdit', rowIndex);
+
+        }
+        function saveRow(rowIndex) {
+            //未修改之前的数据
+            var originRowData = $('#coursett').datagrid('getRows')[rowIndex];
+
+            //jquery的extend方法 Object.assgin方法相似
+            originRowData = $.extend({}, originRowData);
+            //拿到修改完的数据
+            $('#coursett').datagrid('endEdit', rowIndex); //结束编辑状态
+            var rowData = $('#coursett').datagrid('getRows')[rowIndex];//获得当前行数
+            $('#coursett').datagrid('beginEdit', rowIndex); //再进入编辑状态
+            console.log(rowData)
+            rowData.isEditing = '';
+            //发送ajax请求
+            $.ajax({
+                url: 'http://localhost:3000/course/' + rowData.id,
+                data: rowData,
+                type: 'PUT',
+                dataType: 'json'
+            }).done(function (data) {
+                //提示成功或失败
+                $.messager.show({
+                    title: '提示消息',
+                    msg: '修改成功',
+                    timeout: 1000
+                });
+                $('#coursett').datagrid('endEdit', rowIndex); //结束编辑状态
+
+            }).fail(function (xhr, status, erromsg) {
+                $.messager.show({
+                    title: '提示消息',
+                    msg: '修改失败',
+                    timeout: 1000
+                });
+                $.extend(rowData, originRowData);
+            })
+
+
+        }
+        function delRow(rowIndex) {
+            $.messager.confirm({
+                title: '确认消息',
+                msg: '确认要删除吗?',
+                fn: function (r) {
+                    var rowData = $('#coursett').datagrid('getRows')[rowIndex];//获得当前行数
+
+                    if (!r) {
+                        return;
+                    }
+                    //用户进行删除操作
+                    $.ajax({
+                        url: 'http://localhost:3000/course/' + rowData.id,
+                        data: '',
+                        type: 'DELETE',
+                        dataType: 'json'
+                    }).done(function (data) {
+                        $('#coursett').datagrid('reload')
+                    }).fail(function () {
+                        $.messager.show({
+                            title: '提示消息',
+                            msg: '请重新删除',
+                            iconCls: 'icon-ok',
+                            timeout: 1000
+                        });
+                    })
+                }
+
+            })
+        }
+    </script>
+
+</body>
+
+</html>

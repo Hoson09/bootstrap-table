@@ -1,0 +1,67 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-08 19:55:27
+ * @LastEditTime: 2019-08-09 18:55:57
+ * @LastEditors: Please set LastEditors
+ -->
+ <div class="bookxq">
+
+    <div class="book-top">
+       <div class="book-l">
+          <img src="{{val.imgUrl}}" alt="教材图片">
+          <p><span class="glyphicon glyphicon-user"></span>200</p>
+       </div>
+       <div class="book-r">
+          <p class="bookr-p">书名: {{val.title}}</p>
+          <p class="bookr-p">作者: {{val.author}}</p>
+          <p class="bookr-p">价格:  <span>￥{{val.price}}/年</span></p>
+          <hr>
+          <div class="about">
+          </div>
+          <div class="about-1">
+          </div>
+          <div class="about-2">
+          </div>
+          
+       </div>
+    </div>
+    <div class="book-bottom">
+       <div class="book-bottom-l">
+          <div class="book-bottom-item">
+             <p class="author">作者介绍</p>
+             
+            <div class="author-div">{{# val.author_des}}</div>
+            <hr>
+          </div>
+          <div class="book-bottom-item">
+             <p class="author">教材介绍</p>
+             
+            <div class="author-div">{{#  val.description}}</div>
+            <hr>
+          </div>
+          <div class="book-bottom-item">
+             <p class="author">课程目录</p>
+             
+            <div class="author-div">
+               <ul>
+                  <li>第一课时&gt;课时名称&gt;课时名称</li>
+                  <li>第二课时&gt;课时名称&gt;课时名称</li>
+                  <li>第三课时&gt;课时名称&gt;课时名称</li>
+                  <li>第四课时&gt;课时名称&gt;课时名称</li>
+               </ul>
+            </div>
+          </div>
+       </div>
+       <div class="book-bottom-r">
+          <div class="book-bottom-r-hd">
+             <p class="left-p">相关教材</p>
+             <p class="right-p">more...</p>
+          </div>
+          <div class="book-bottom-r-bd">
+             
+          </div>
+       </div>
+    </div>
+    
+ </div>

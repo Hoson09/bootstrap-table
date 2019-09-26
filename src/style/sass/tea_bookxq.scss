@@ -1,0 +1,154 @@
+.tea-bookxq {
+    background-color: #fbfbfb;
+    .crumbs {
+        width: 1200px;
+        margin: 10px auto;
+    }
+}
+
+//教师端教材详情
+.bookxq {
+    width: 1200px;
+    margin: 10px auto;
+    .book-top{
+        display: flex;
+        width: 1200px;
+        height: 383px;
+        border:1px solid #ccc;
+        background-color: #fff;
+        .book-l {
+            margin: 30px;
+        }
+        .book-r {
+            hr{
+                width: 700px;
+                // color: #e8e8e8;
+            }
+            margin: 30px;
+            .bookr-p{
+                span{
+                    color: #e7594d;
+                }
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+            
+            .about{
+                h1{
+            
+                    font-size: 14px;
+                }
+                .about-p {
+                    margin-bottom: 0;
+                    font-size: 13px;
+                    // color: red;
+            
+                }
+                
+            }
+            .about-1 {
+                font-size: 13px;
+            }
+            .about-2 {
+                font-size: 13px;
+                .date-p{
+                    margin:15px 0; 
+                }
+                span{
+                    color: #e7594d;
+                }
+                .button{
+                    display: flex;
+                    .button-item{
+                        width: 200px;
+                        height: 40px;
+                        background-color: #2db0f9;
+                        margin-right: 30px;
+                        text-align: center;
+                        line-height: 40px;
+                       a{
+                        color: #fff;
+                       } 
+                    }
+                    .right{
+                       background-color:#1bbc9c;
+                    }
+                }
+            }
+            
+        }
+    }
+    .book-bottom {
+        width: 1200px;
+        margin: 10px auto 50px;
+        display: flex;
+        .book-bottom-l{
+            width: 900px;
+            height: 920px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            .book-bottom-item{
+                width: 900px;
+                height: 300px;
+                .author{
+                    border-left: 6px solid #2db0f9;
+                    margin: 30px;
+                    padding-left: 12px;
+                }
+                .author-div{
+                    margin-left: 30px;
+                    // text-align: center;
+                    height: 225px;
+                }
+            }
+        }
+        .book-bottom-r{
+            width: 260px;
+            height: 560px;
+            margin-left:12px;
+            border: 1px solid #ccc;
+            .book-bottom-r-hd{
+                width: 258px;
+                height: 40px;
+                display: flex;
+                justify-content: space-around;
+                line-height: 40px;
+                .left-p{
+                    font-weight: bold;
+                    font-size: 17px;
+                }
+                .right-p{
+                    color: #2db0f9;
+                }
+                
+                
+                
+            }
+            .book-bottom-r-bd{
+                height: 518px;
+                background-color: #fff;
+                .spring{
+                    width: 200px;
+                    margin: 0 auto;
+                    img{
+                        width: 200px;
+                        height: 180px;
+                    }
+                    p{
+                        margin: 20px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.crumbs-list {
+    display: flex;
+    a{
+       color: #2db0f9;
+    }
+}
+
+
+

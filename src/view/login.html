@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../style/main.css">
+  <title>哈工大登录页面</title>
+</head>
+
+<body class="login-body">
+  <!-- 登录页面头部 -->
+  <div class="login-nav">
+    <p>哈工大登录页面</p>
+  </div>
+
+  <!-- 登录页面主要部分 -->
+  <div class="login-main">
+    <h1>用户登录</h1>
+    <form id="login-frm">
+      <div class="login-all">
+
+        <div class="login-user">
+          <p>用户名:</p>
+          <input type="text" placeholder="请输入用户名" value="zxc" name="username">
+        </div>
+        <div class="login-user">
+          <p>密码&nbsp;&nbsp;&nbsp;:</p>
+          <input type="password" placeholder="请输入密码" value="zxc" name="password">
+        </div>
+
+        <div class="login-check">
+          <div class="login-check-1">
+            <input type="radio" name="123" id="login-student"><label for="login-student">学生端</label>
+          </div>
+          <div class="login-check-2">
+            <input type="radio" name="123" id="longin-teacher"><label for="longin-teacher">教师端</label>
+          </div>
+        </div>
+        <div class="login-btn">
+          登录
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    (function (w, d, s, g, o) {
+      var x = document.createElement(s),
+        s = document.getElementsByTagName(s)[0];
+      w[g] = o;
+      x.async = true;
+      x.charset = 'utf-8';
+      x.src = 'https://cdn.xiankefu.com/dist/xiankefu.js';
+      s.parentNode.insertBefore(x, s);
+    })(window, document, 'script', 'XIANKEFU_GLOBAL', {
+      bid: '0764047b5129ed6ed828fac0ec7f9a3f'
+    });
+  </script>
+  <script src="/lib/require.js" data-main="/js/controllers/loginController.js"></script>
+</body>
+
+</html>

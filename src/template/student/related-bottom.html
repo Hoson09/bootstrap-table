@@ -1,0 +1,22 @@
+<div class="bottom-t">
+   <div class="bottom-l">相关课程</div>
+   <div class="bottom-r">more...</div>
+</div>
+<div class="bottom-b">
+   <div class="bottom-b-t">
+      {{each data as val index}}
+      <div class="bottom-b-t-t">
+         <img src="{{val.imgUrl}}" alt="">
+      </div>
+      <div class="bottom-b-t-b">{{val.title}}</div>
+      {{/each}}
+   </div>
+   <div class="bottom-b-b">
+      {{each data as val index}}
+      <div class="bottom-b-b-t">
+         <img src="{{val.imgUrl}}" alt="">
+      </div>
+      <div class="bottom-b-b-b">{{val.title}}</div>
+      {{/each}}
+   </div>
+</div>

@@ -1,0 +1,59 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-15 09:34:37
+ * @LastEditTime: 2019-08-15 14:47:51
+ * @LastEditors: Please set LastEditors
+ -->
+ <div class="tea_bottom-tab">
+
+     <div class="btm-hd">
+        <ul class="tab-list">
+            <li class="item-tab bgc ">开课中</li>
+            <li class="item-tab">已完结</li>
+        </ul> 
+        <div class="btm-hd-r"><a href="#">课程管理</a></div>
+     </div>
+     <div class="btm-bd">
+         <div class="btm-bd-1 on">
+             {{each data as val index}}
+            <div class="tab-item">
+                <img src="{{val.img}}" alt="课程图片">
+                <div class="word-wrap">
+                    <p class="title-p">{{val.title}}</p>
+                    <div class="word">
+                        <p>需要验证后才能加入</p>
+                        <p>邀请码:{{val.invitecode}}</p>
+                        <p>发布时间:{{val.subon}}</p>
+                        <p><span class="glyphicon glyphicon-user"></span>{{val.studycount}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            <div class="pagenation">
+                <p>一共{{pagenum}}条数据</p>
+                <div class="page"></div>
+            </div>
+         </div>
+         <div class="btm-bd-1">
+              {{each data as val index}}
+                <div class="tab-item">
+                    <img src="{{val.img}}" alt="课程图片">
+                    <div class="word-wrap">
+                        <p class="title-p">{{val.title}}</p>
+                       
+                        <div class="word">
+                            <p>邀请码:{{val.invitecode}}</p>
+                            <p>开课时间:{{val.studytime}}</p>
+                            <p><span class="glyphicon glyphicon-user"></span>{{val.studycount}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                <div class="pagenation">
+                        <p>一共{{pagenum}}条数据</p>
+                        <div class="page"></div>
+                    </div>
+            </div>
+     </div>
+ </div>

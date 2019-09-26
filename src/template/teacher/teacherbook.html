@@ -1,0 +1,24 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-08 11:12:47
+ * @LastEditTime: 2019-08-16 17:52:44
+ * @LastEditors: Please set LastEditors
+ -->
+
+<div class="teacher-book">
+
+
+<div class="book-top">热门教材</div>
+<div class="book-all">
+    {{each data as val index }}
+    <div class="book">
+        <a  target="_blank" href="/view/teacher/tea_book.html?id={{val.id}}" >
+      <img src="../../img/images/jiaocai_08.gif">
+      <p>{{val.title}}</p>
+    </a>
+    </div>
+    {{/each}}
+</div>
+
+</div>

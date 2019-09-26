@@ -1,0 +1,176 @@
+html,
+body,
+div,
+ul,
+li,
+ol,
+div,
+hr,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.stu_end .containerd {
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.stu_end .containerd .managementa {
+  width: 100%;
+  height: 86px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_end .containerd .managementa .man-l {
+  width: 208px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.stu_end .containerd .managementa .man-l .l-l {
+  width: 104px;
+  height: 35px;
+  border: 1px solid #ccc;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2px;
+}
+
+.stu_end .containerd .managementa .man-l .l-r {
+  width: 104px;
+  height: 35px;
+  border: 1px solid #ccc;
+  background-color: #2db0f9;
+  color: #666666;
+  border-left: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2px;
+}
+
+.stu_end .containerd .centent {
+  width: 100%;
+  height: 755px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.stu_end .containerd .centent .centent-centent {
+  width: 100%;
+  height: 244px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #ccc;
+}
+
+.stu_end .containerd .centent .centent-centent .centent-l {
+  width: 278px;
+  height: 244px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_end .containerd .centent .centent-centent .centent-l img {
+  width: 230px;
+  height: 200px;
+}
+
+.stu_end .containerd .centent .centent-centent .centent-r {
+  width: 782px;
+  height: 100%;
+}
+
+.stu_end .containerd .centent .centent-centent .centent-r .centent-top {
+  width: 100%;
+  height: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.stu_end .containerd .centent .centent-centent .centent-r .centent-top .top-tea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_end .containerd .page {
+  width: 100%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stu_end .containerd .page .page-l {
+  font-size: 14px;
+}
+
+.stu_end .containerd .page .page-l span {
+  color: #2db0f9;
+}
+/*# sourceMappingURL=stu_end.css.map */
